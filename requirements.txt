@@ -22,5 +22,5 @@ huggingface-hub
 python-dotenv
 
 # Machine Learning Utilities
-numpy
+numpy<2.0
 scikit-learn
