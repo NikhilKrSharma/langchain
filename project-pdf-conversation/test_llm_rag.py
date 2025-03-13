@@ -1,5 +1,4 @@
 from query_data import query_rag
-# from langchain_community.llms.ollama import Ollama
 from langchain_ollama.llms import OllamaLLM
 
 
@@ -49,3 +48,4 @@ def query_and_validate(question: str, expected_response: str):
         raise ValueError(
             f"Invalid evaluation result. Cannot determine if 'true' or 'false'."
         )
+    
