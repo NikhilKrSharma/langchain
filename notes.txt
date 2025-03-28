@@ -1,0 +1,36 @@
+pip install transformers
+pip install --upgrade langchain[huggingface]
+
+# pip install 'transformers[torch]'
+# pip install 'transformers[tf-cpu]'
+
+python -c "from transformers import pipeline; print(pipeline('sentiment-analysis')('we love you'))"
+
+============
+Cache setup
+============
+Pretrained models are downloaded and locally cached at: ~/.cache/huggingface/hub. 
+This is the default directory given by the shell environment variable TRANSFORMERS_CACHE. 
+On Windows, the default directory is given by C:\Users\username\.cache\huggingface\hub. 
+You can change the shell environment variables shown below - in order of priority - to specify a different cache directory:
+- Shell environment variable (default): HF_HUB_CACHE or TRANSFORMERS_CACHE.
+- Shell environment variable: HF_HOME.
+- Shell environment variable: XDG_CACHE_HOME + /huggingface.
+
+
+============
+Offline mode
+============
+Run 🤗 Transformers in a firewalled or offline environment with locally cached files by setting the environment variable 
+HF_HUB_OFFLINE=1
+Add 🤗 Datasets to your offline training workflow with the environment variable 
+HF_DATASETS_OFFLINE=1.
+
+HF_DATASETS_OFFLINE=1 HF_HUB_OFFLINE=1 \
+python examples/pytorch/translation/run_translation.py --model_name_or_path google-t5/t5-small --dataset_name wmt16 --dataset_config ro-en ...
+
+
+
+
+
+
