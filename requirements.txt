@@ -6,6 +6,7 @@ torchvision
 torchaudio 
 langchain
 langchain-huggingface
+langchain-ollama
 langchain-openai
 langchain-anthropic
 langchain-aws 
